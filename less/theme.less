@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/**
+ * MDModern Theme main css
+ * 
+ * @author  Philipp Miller
+ * @url     https://github.com/philer/MDModern
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
+ */
+
+/*** global vars ***/
+
+@defaultLineHeight: 1.3rem;
+@highlightBg:       rgba(125, 125, 125, .2);
+
+
+/*** font awesome ***/
+
+@faComment: "\f075";
+.font-awesome(@icon: "") {
+  content: @icon;
+  font-family: "FontAwesome";
+  display: inline-block;
+}
+
+/*** general ***/
+
+*,
+a,
+input,
+button
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0 solid transparent;
+  outline-width: 0;
+  outline-color: transparent;
+  
+  background-color: transparent;
+  color: inherit;
+  
+  font-size: 1em;
+  line-height: @defaultLineHeight;
+  font-family: inherit;
+  text-decoration: none;
+  
+  list-style-type: none;
+}
+
+html,
+body
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  font-size: 11px;
+  font-family: "Liberation mono", monospace;
+  
+  color: #ddd;
+  text-shadow: 1px 1px 0 black;
+  background-color: #222;
+}
+
+a,
+button
+{
+  cursor: pointer;
+  transition-duration: .3s;
+  transition-property:
+    color,
+    background-color,
+    border-color,
+    opacity,
+    text-shadow,
+    box-shadow;
+}
+
+li.selected {
+  background-color: @highlightBg;
+}
+
+button,
+input
+{
+  &::-moz-focus-inner {
+    padding: 0;
+    border-width: 0;
+  }
+}
+
+// thin scrollbars in webkit
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: transparent;
+    border: 0 transparent;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,.3);
+}
+
+
+/*** layout ***/
+
+#wrapper { z-index: 1000; }
+#panel   { z-index: 2000; }
+
+#wrapper {
+  position: absolute;
+  // top: 0;
+  top: @panelHeight;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+/*** misc ***/
+
+#msg {
+  position: absolute;
+  top: 5rem;
+  width: 60%;
+  margin: 0 20%;
+  font-size: 1.2em;
+  line-height: 3rem;
+  background: linear-gradient(to bottom, #1A1A1A 0, #2F2F2F 100%) repeat scroll 0% 0% transparent;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, .4);
+  cursor: pointer;
+  &.error {
+    background: linear-gradient(to bottom, #5F1F1F 0, #4A0A0A 100%) repeat scroll 0% 0% transparent;
+  }
+}
+
+
+/*** imports ***/
+
+@import "panel.less";
+@import "login.less";
+@import "slideshow.less";
+@import "console.less";

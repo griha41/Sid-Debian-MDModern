@@ -13,7 +13,7 @@ This theme functions both as a regular theme and an easy to use dev kit.
 You can simply use this theme as is and customize it using the available configuration options, or you can modify the sources to create something completely new.
 Web developers may be happy to find several well documented JavaScript modules, including an easy-to-use MDM interface, which you can use to build your very own theme.
 
-![screenshot](https://raw.githubusercontent.com/griha41/Sid-Debian-MDModern/Theme.png)
+![screenshot](https://raw.githubusercontent.com/griha41/Sid-Debian-MDModern/master/Theme.png)
 
 
 ## Installation
